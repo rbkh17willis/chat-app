@@ -24,14 +24,25 @@ const Start = ({ navigation }) => {
          {/* user selects backgroung color */}
          <View style={styles.colorButtonContainer}>
            {colors.map((color, index) => (
-             <TouchableOpacity key={index}
-                style={[styles.colorButton,{ backgroundColor: color }, background === color && styles.selectedColor,]}
-                onPress={() => setBackground(color)}
+             <TouchableOpacity
+               key={index}
+               accessible={true}
+               accessibilityRole="button"
+               accessibilityHint="Lets you choose background color for your chat screen"
+               style={[
+                 styles.colorButton,
+                 { backgroundColor: color },
+                 background === color && styles.selectedColor,
+               ]}
+               onPress={() => setBackground(color)}
              />
            ))}
          </View>
          {/* to start chat */}
          <TouchableOpacity
+           accessible={true}
+           accessibilityRole="button"
+           accessibilityHint="Lets you choose to enter the chat room"
            style={styles.button}
            onPress={() =>
              navigation.navigate("Chat", { name: name, background: background })
@@ -68,6 +79,7 @@ const styles = StyleSheet.create({
   box: {
     // backgroundColor: '#ffffff', 
     backgroundColor: '#f2f2f2',
+    borderRadius: 4,
     width: '88%',
     height: '50%', 
     alignItems: 'center',
