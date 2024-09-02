@@ -1,5 +1,6 @@
-# Fuse App
-This is a project created for the careerFoundry Full Stack Development Course. It is a chat app for mobile devices made using React Native as the framework. The app will provide users with a chat interface and options to share images and their location.
+# Chat App
+This is a project is for mobile devices made using React Native as the framework. The app will provide users with a chat interface and options to share images and their location. This is a mobile application tested through Expo.
+Firestore and Firebase served as the main database and storage for user messages.
 
 # Features and Requirements
 Key Features:
@@ -14,6 +15,30 @@ Key Features:
 * Google Firebase for cloud-cased storage of messages and image files sent through the chat
 * GiftedChat library for creating the chat interface
 * Android Studio for a device emulator
+
+## How to Run This App
+  - Clone repository
+  - Install Node.js & use v16.19.0 by running `nvm use 16.19.0`
+  - Install Expo by running `npm install -g expo-cli`
+  - Locate the `chat-app` folder and run `npm install` to initialize a `package.json` file
+
+  - Set up Google Firebase by first signing in at
+  https://firebase.google.com/
+  - Then, create project
+  - Select production mode
+  - After creating the project, click on Project Overview >
+  Project Settings > Your Apps
+  - Copy configuration code (all the code inside of `const firebaseConfig = { ... }`)
+
+  - Return to repository
+  - Locate `chat-app` folder
+  - Install Firebase through `npm install firebase`
+  - Initialize Firebase by  pasting configuration code that you copied earlier inside of App.js
+
+  - Download Expo Go app on mobile device or use emulator on PC
+  - Open Expo Go app
+  - Type in terminal of IDE `npx expo start` to start project on Expo Go app
+
 
 # Dependencies:
 * @react-navigation/native: ^6.1.17
@@ -31,13 +56,3 @@ Key Features:
 * expo-location: ~17.0.1
 * react-native-maps: 1.14.0
 * expo-image-picker: ~15.0.5
-
-# Installation:
-* Clone this repository
-* Install Node.js (It's recommended to use version 16.19.0 to avoid issues down the line)
-* Install Expo globally using "-g expo-cli"
-* Install dependencies listed above
-* Navigate to the desired project folder and use "npx create-expo-app hello-world --template" to create your project (sub "hello world" for your project name).It's recommended to start with a Blank template for a clean canvas to work from
-* use "npx expo start" to start your development server and check it with the Expo Go
-* set up Firebase - follow prompt to create a new Firestore Database, make sure to set all rules to "allow read, write: if true;" remember to install Firebase using npm and follow Firebase documentation to initialise Firebase in your project file
-Happy coding!
